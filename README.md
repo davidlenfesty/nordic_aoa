@@ -9,10 +9,12 @@ This is partly for getting direction finding support into NimBLE, but that depen
 
 There will be two boards, the tag, and the locator. Both will be dev boards, with a USB debugging interface (CMSIS-DAP or dap42 or something), some broken out pins, and the antennas.
 
+To see an interactive bom, open $board/bom/ibom.html in a web browser.
+
 ### Tag
 
 I will do this board first, to ensure that I can do the RF design, as I have never done any RF before.
-It will just be a board with USB and a single antenna.
+It will just be a board with a USB debugging interface and a single antenna.
 
 ### Locator
 
@@ -25,7 +27,7 @@ I'll have some firmware done at some point to actually do the playing around. It
 ## Progress
 
 - [ ] Tag hardware design
-    - [ ] Schematic
+    - [X] Schematic
     - [ ] BOM
     - [ ] Layout
     - [ ] Assembly / Verification
