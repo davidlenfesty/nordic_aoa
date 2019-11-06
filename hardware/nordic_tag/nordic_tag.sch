@@ -1,0 +1,350 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr USLetter 11000 8500
+encoding utf-8
+Sheet 1 3
+Title "BLE Direction Finder"
+Date "2019-11-05"
+Rev "A"
+Comp "David Lenfesty"
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 2850 2650 1050 1000
+U 5DCA970B
+F0 "nRF52811" 50
+F1 "nRF52811.sch" 50
+F2 "TX" I L 2850 3450 50 
+F3 "RX" I L 2850 3550 50 
+F4 "ANT" I R 3900 2700 50 
+F5 "P0.00" I R 3900 2850 50 
+F6 "P0.01" I R 3900 2950 50 
+F7 "P0.04" I R 3900 3050 50 
+F8 "P0.05" I R 3900 3150 50 
+F9 "P0.28" I R 3900 3250 50 
+F10 "P0.30" I R 3900 3350 50 
+F11 "P0.06" I R 3900 3450 50 
+F12 "P0.09" I R 3900 3550 50 
+F13 "SWDCLK" I L 2850 2800 50 
+F14 "SWDIO" I L 2850 2700 50 
+F15 "RESET" I L 2850 2900 50 
+$EndSheet
+Wire Notes Line
+	5000 2400 6300 2400
+Text Notes 5500 3400 0    50   ~ 0
+Impedance Matching
+Wire Notes Line
+	5000 3400 6300 3400
+Wire Notes Line
+	5000 2400 5000 3400
+Wire Notes Line
+	6300 2400 6300 3400
+Text Label 5950 2700 0    50   ~ 0
+BLE_ANT
+$Comp
+L power:GND #PWR?
+U 1 1 5DCE2141
+P 5550 3100
+F 0 "#PWR?" H 5550 2850 50  0001 C CNN
+F 1 "GND" H 5555 2927 50  0000 C CNN
+F 2 "" H 5550 3100 50  0001 C CNN
+F 3 "" H 5550 3100 50  0001 C CNN
+	1    5550 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 3000 5550 3100
+Connection ~ 5550 2700
+$Comp
+L Device:C C?
+U 1 1 5DCE2149
+P 5550 2850
+F 0 "C?" H 5665 2896 50  0000 L CNN
+F 1 "0p8" H 5665 2805 50  0000 L CNN
+F 2 "" H 5588 2700 50  0001 C CNN
+F 3 "~" H 5550 2850 50  0001 C CNN
+	1    5550 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5DCE214F
+P 5700 2700
+F 0 "L?" V 5519 2700 50  0000 C CNN
+F 1 "3n9" V 5610 2700 50  0000 C CNN
+F 2 "" H 5700 2700 50  0001 C CNN
+F 3 "~" H 5700 2700 50  0001 C CNN
+	1    5700 2700
+	0    1    1    0   
+$EndComp
+Text Label 5200 2700 2    50   ~ 0
+ANT
+$Sheet
+S 2850 1250 1050 650 
+U 5DCA89B5
+F0 "dap42-programmer" 50
+F1 "dap42.sch" 50
+F2 "TGT_SWDIO" I R 3900 1300 50 
+F3 "TGT_SWDCLK" I R 3900 1400 50 
+F4 "TGT_SWO" I R 3900 1500 50 
+F5 "TGT_RX" I R 3900 1700 50 
+F6 "TGT_TX" I R 3900 1800 50 
+F7 "TGT_RESET" I R 3900 1600 50 
+F8 "USB_DM" I L 2850 1400 50 
+F9 "USB_DP" I L 2850 1300 50 
+$EndSheet
+Text Notes 6750 900  0    50   ~ 0
+3v3 Regulator\n
+$Comp
+L power:+5V #PWR?
+U 1 1 5DD3F612
+P 6850 1150
+F 0 "#PWR?" H 6850 1000 50  0001 C CNN
+F 1 "+5V" H 6865 1323 50  0000 C CNN
+F 2 "" H 6850 1150 50  0001 C CNN
+F 3 "" H 6850 1150 50  0001 C CNN
+	1    6850 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3V3 #PWR?
+U 1 1 5DD3F8BB
+P 7750 1150
+F 0 "#PWR?" H 7750 1000 50  0001 C CNN
+F 1 "+3V3" H 7765 1323 50  0000 C CNN
+F 2 "" H 7750 1150 50  0001 C CNN
+F 3 "" H 7750 1150 50  0001 C CNN
+	1    7750 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5DD3FB7E
+P 7300 1650
+F 0 "#PWR?" H 7300 1400 50  0001 C CNN
+F 1 "GND" H 7305 1477 50  0000 C CNN
+F 2 "" H 7300 1650 50  0001 C CNN
+F 3 "" H 7300 1650 50  0001 C CNN
+	1    7300 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:AP2112K-3.3 U?
+U 1 1 5DD400B3
+P 7300 1300
+F 0 "U?" H 7300 1642 50  0000 C CNN
+F 1 "AP2112K-3.3" H 7300 1551 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5" H 7300 1625 50  0001 C CNN
+F 3 "https://www.diodes.com/assets/Datasheets/AP2112.pdf" H 7300 1400 50  0001 C CNN
+	1    7300 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6850 1150 6850 1200
+Wire Wire Line
+	6850 1200 6950 1200
+Wire Wire Line
+	7600 1200 7750 1200
+Wire Wire Line
+	7750 1200 7750 1150
+Wire Wire Line
+	7300 1600 7300 1650
+Wire Wire Line
+	7000 1300 6950 1300
+Wire Wire Line
+	6950 1300 6950 1200
+Connection ~ 6950 1200
+Wire Wire Line
+	6950 1200 7000 1200
+Wire Notes Line
+	6750 900  7900 900 
+Wire Notes Line
+	7900 900  7900 1900
+Wire Notes Line
+	7900 1900 6750 1900
+Wire Notes Line
+	6750 1900 6750 900 
+$Comp
+L Connector:USB_B_Micro J?
+U 1 1 5DD4CFD2
+P 1050 1300
+AR Path="/5DCA89B5/5DD4CFD2" Ref="J?"  Part="1" 
+AR Path="/5DD4CFD2" Ref="J?"  Part="1" 
+F 0 "J?" H 1107 1767 50  0000 C CNN
+F 1 "USB_B_Micro" H 1107 1676 50  0000 C CNN
+F 2 "" H 1200 1250 50  0001 C CNN
+F 3 "~" H 1200 1250 50  0001 C CNN
+	1    1050 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1350 1100 1550 1100
+Text Label 1500 1300 0    50   ~ 0
+USD_DP
+Text Label 1500 1400 0    50   ~ 0
+USB_DM
+Wire Wire Line
+	950  1700 1050 1700
+Wire Wire Line
+	1050 1700 1050 1800
+Connection ~ 1050 1700
+NoConn ~ 1350 1500
+Text Notes 1250 1850 0    50   ~ 0
+Per USB Spec:\nID is left floating.\n
+$Comp
+L power:GND #PWR?
+U 1 1 5DD4CFE2
+P 1050 1800
+AR Path="/5DD4CFE2" Ref="#PWR?"  Part="1" 
+AR Path="/5DCA89B5/5DD4CFE2" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1050 1550 50  0001 C CNN
+F 1 "GND" H 1055 1627 50  0000 C CNN
+F 2 "" H 1050 1800 50  0001 C CNN
+F 3 "" H 1050 1800 50  0001 C CNN
+	1    1050 1800
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	700  750  2000 750 
+Wire Notes Line
+	2000 750  2000 2050
+Wire Notes Line
+	2000 2050 700  2050
+Wire Notes Line
+	700  2050 700  750 
+Text Notes 700  750  0    50   ~ 0
+USB\n
+Wire Wire Line
+	1550 1100 1550 1000
+$Comp
+L power:+5V #PWR?
+U 1 1 5DD4CFEE
+P 1550 1000
+AR Path="/5DCA89B5/5DD4CFEE" Ref="#PWR?"  Part="1" 
+AR Path="/5DD4CFEE" Ref="#PWR?"  Part="1" 
+F 0 "#PWR?" H 1550 850 50  0001 C CNN
+F 1 "+5V" H 1565 1173 50  0000 C CNN
+F 2 "" H 1550 1000 50  0001 C CNN
+F 3 "" H 1550 1000 50  0001 C CNN
+	1    1550 1000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 1300 4050 1300
+Wire Wire Line
+	4050 1300 4050 2100
+Wire Wire Line
+	4050 2100 2150 2100
+Wire Wire Line
+	2150 2100 2150 2700
+Wire Wire Line
+	2150 2700 2850 2700
+Wire Wire Line
+	3900 1400 4150 1400
+Wire Wire Line
+	4150 1400 4150 2200
+Wire Wire Line
+	4150 2200 2250 2200
+Wire Wire Line
+	2250 2200 2250 2800
+Wire Wire Line
+	2250 2800 2850 2800
+Wire Wire Line
+	3900 1600 4250 1600
+Wire Wire Line
+	4250 1600 4250 2300
+Wire Wire Line
+	4250 2300 2350 2300
+Wire Wire Line
+	2350 2300 2350 2900
+Wire Wire Line
+	2350 2900 2850 2900
+Wire Wire Line
+	3900 1700 4350 1700
+Wire Wire Line
+	4350 1700 4350 2400
+Wire Wire Line
+	4350 2400 2450 2400
+Wire Wire Line
+	2450 2400 2450 3550
+Wire Wire Line
+	2450 3550 2850 3550
+Wire Wire Line
+	3900 1800 4450 1800
+Wire Wire Line
+	4450 1800 4450 2500
+Wire Wire Line
+	4450 2500 2550 2500
+Wire Wire Line
+	2550 2500 2550 3450
+Wire Wire Line
+	2550 3450 2850 3450
+NoConn ~ 3900 1500
+Wire Wire Line
+	1350 1400 2850 1400
+Wire Wire Line
+	1350 1300 2850 1300
+Wire Wire Line
+	3900 2700 5550 2700
+$Comp
+L Connector:Conn_01x08_Male J?
+U 1 1 5DD7FECD
+P 4300 3150
+F 0 "J?" H 4272 3124 50  0000 R CNN
+F 1 "Conn_01x08_Male" H 4272 3033 50  0000 R CNN
+F 2 "" H 4300 3150 50  0001 C CNN
+F 3 "~" H 4300 3150 50  0001 C CNN
+	1    4300 3150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3900 2850 4100 2850
+Wire Wire Line
+	3900 2950 4100 2950
+Wire Wire Line
+	3900 3050 4100 3050
+Wire Wire Line
+	3900 3150 4100 3150
+Wire Wire Line
+	3900 3250 4100 3250
+Wire Wire Line
+	3900 3350 4100 3350
+Wire Wire Line
+	3900 3450 4100 3450
+Wire Wire Line
+	3900 3550 4100 3550
+Wire Wire Line
+	5850 2700 6800 2700
+$Comp
+L Device:Antenna_Chip AE?
+U 1 1 5DD9ADD7
+P 6900 2800
+F 0 "AE?" V 6872 3104 50  0000 L CNN
+F 1 "Antenna_Chip" V 6963 3104 50  0000 L CNN
+F 2 "" H 6800 2975 50  0001 C CNN
+F 3 "~" H 6800 2975 50  0001 C CNN
+	1    6900 2800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6800 2900 6700 2900
+Wire Wire Line
+	6700 2900 6700 3000
+$Comp
+L power:GND #PWR?
+U 1 1 5DD9C25C
+P 6700 3000
+F 0 "#PWR?" H 6700 2750 50  0001 C CNN
+F 1 "GND" H 6705 2827 50  0000 C CNN
+F 2 "" H 6700 3000 50  0001 C CNN
+F 3 "" H 6700 3000 50  0001 C CNN
+	1    6700 3000
+	1    0    0    -1  
+$EndComp
+Text Notes 6950 3100 0    50   ~ 0
+Not sure if this is the right symbol here
+$EndSCHEMATC

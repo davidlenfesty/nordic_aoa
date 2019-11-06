@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name NRF52811)(type Legacy)(uri /home/david/Projects/nordic_aoa/hardware/NRF52811.lib)(options "")(descr ""))
+)

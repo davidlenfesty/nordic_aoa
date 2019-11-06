@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP nRF52811-QCAA
+D ARM Cortex-M4 BLE-enabled processor.
+K arm, processor, ble, bluetooth
+F https://infocenter.nordicsemi.com/pdf/nRF52811_PS_v1.0.pdf
+$ENDCMP
+#
+#End Doc Library
